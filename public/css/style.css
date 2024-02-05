@@ -35,6 +35,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.navbar img{
+  height: 50px ;
+  width: 50px;
+  margin-top: -15px;
+  margin-right: 25px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
   color: #000;
