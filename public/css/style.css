@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: Geometria;
     src: url(geometria_font/Geometria.ttf);
     font-weight: 300;
@@ -26,7 +26,7 @@
     font-family: Geometria;
     src: url(geometria_font/geometria-medium.ttf);
     font-weight: 500;
-}
+}*/
 
 
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600,700,800");
@@ -88,7 +88,7 @@ cite {
 }
 
 ul.app-badge {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 
 ul.app-badge li a img {
@@ -141,6 +141,7 @@ ul.social-links li a {
 ul.social-links li a i {
   font-size: 20px;
   color: #000;
+  
 }
 
 body {
@@ -164,7 +165,9 @@ body {
 a {
   font-size: inherit;
   color: inherit;
+  text-decoration: none;
 }
+
 
 a:focus,
 a:hover {
@@ -192,12 +195,12 @@ a:hover {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .section-title h2 {
@@ -229,7 +232,7 @@ a:hover {
 .video .video-box a iframe {
   width: 100%;
   height: 100%;
-}
+} 
 
 .form-control.main {
   background: #fff;
@@ -302,8 +305,8 @@ button:focus,
 
 
 .btn-main {
-  padding: 25px 45px;
-  border-radius: 3px;
+  padding: 15px 35px;
+  border-radius: 20px;
   background: #2e7eed;
   color: #fff;
   outline: none;
@@ -318,6 +321,10 @@ button:focus,
   padding: 30px 40px;
   margin-bottom: 30px;
   border-radius: 5px;
+}
+
+.services .service-item a h3{
+  text-decoration: none;
 }
 
 .services .service-block:last-child {
@@ -642,9 +649,9 @@ section.blog-post-area h4 span.author-name {
 
 
 
-/*css for single blog page*/
 
-.single-blog-area {
+
+ .single-blog-area {
     margin-bottom: 100px;
 }
 
@@ -782,7 +789,7 @@ section.blog-post-area h4 span.author-name {
 }
 
 
-/*comment part start*/
+
 
 .single-blog-area .commententries h3 {
     color: #000;
@@ -939,9 +946,9 @@ section.blog-post-area h4 span.author-name {
 .single-blog-area form {
     margin: 50px 0 0;
     position: relative;
-}
+}*/
 
-/*comment part end*/
+
 .grid .portfolio-item {
     margin-bottom: 30px;
 }
@@ -1058,7 +1065,7 @@ section.blog-post-area h4 span.author-name {
 
 .fade-right, .fade-bottom, .fade-left, .zoom-in {
   opacity: 0;
-  transform: translateY(20px); /* Adjust as needed for the zoom-in effect */
+  transform: translateY(20px); 
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -1080,4 +1087,4 @@ section.blog-post-area h4 span.author-name {
 .zoom-in.active {
   opacity: 1;
   transform: scale(1.2);
-}
+} 

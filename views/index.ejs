@@ -3,23 +3,24 @@
 
 <head>
 
-  <!-- Basic Page Needs
-  ================================================== -->
+  <!-- Basic Page Needs-->
   <meta charset="utf-8">
   <title>Quill Quest</title>
 
-  <!-- Mobile Specific Metas
-  ================================================== -->
+  <!-- Mobile Specific Metas -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
   <script src="https://kit.fontawesome.com/e23084d3ca.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- CUSTOM CSS -->
   <link href="/css/style.css" rel="stylesheet">
@@ -27,40 +28,11 @@
 </head>
 
 <body class="body-wrapper">
-
-
-  <nav class="header navbar navbar-expand-lg bg-body-tertiary">
-    <div style="display: flex; justify-content: center; align-items: center;" class="container">
-      <a class="logo navbar-brand" href="/">QuillQuest</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse menu navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a href="/">Home</a></li>
-          <li class="nav-item"><a href="/blog/tech">Tech</a></li>
-          <li class=" nav-item"><a href="/blog/chronicles">Chronicles</a></li>
-          <li class=" nav-item"><a href="/blog/entertain">Entertain</a></li>
-          <li class=" nav-item"><a href="/blog/headlines">Headlines</a></li>
-
-        </ul>
-      </div>
-    </div>
+    <%- include('./partials/nav') %>
     <!-- <div class="navbar">
 			<a href="#" class="navbar-brand"><img src="/images/logo.png" alt="Logo"></a>
 			
 			</div> -->
-
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle navbar" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="/images/logo.png" alt="">
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/user/logout">Add Blog</a></li>
-        <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
-
-      </ul>
-    </li>
     </div>
   </nav>
 
@@ -70,15 +42,13 @@
   <section class="section gradient-banner">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-left">
-			<div id="animatedElement">
-				<h1 class="text-white font-weight-bold mb-4"> Exploring the World Through Words</h1>
-                <p class="text-white mb-5">Uncover Stories, Ideas, and Inspiration Across Every Topic</p>
-			</div>
-          
+        <div class="col-md-6 text-center text-md-left" data-aos="fade-right" data-aos-offset="70" data-aos-delay="30" data-aos-duration="600"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+          <h1 class="text-white font-weight-bold mb-4"> Exploring the World Through Words</h1>
+          <p class="text-white mb-5">Uncover Stories, Ideas, and Inspiration Across Every Topic</p>
         </div>
-        <div class="col-md-6 text-center">
-			
+        <div class="col-md-6 text-center"data-aos="fade-left" data-aos-offset="100" data-aos-delay="30" data-aos-duration="600"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
           <img class="img-fluid" src="/images/hero.jpg" alt="screenshot">
         </div>
       </div>
@@ -86,24 +56,31 @@
   </section>
   <!--====  End of Hero Section  ====-->
 
-  <!--==================================
-=            Feature Grid            =
-===================================-->
+  <!--Feature Grid-->
   <section class="feature section pt-0">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 ml-auto justify-content-center" data-aos="fade-right">
+        <div class="col-lg-6 ml-auto justify-content-center" data-aos="fade-right" data-aos-offset="100"
+          data-aos-delay="30" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="false" data-aos-anchor-placement="top-center">
           <!-- Feature Mockup -->
           <div class="image-content">
             <img class="img-fluid" src="/images/feature/blog_man.jpg" alt="iphone">
           </div>
         </div>
-        <div class="col-lg-6 mr-auto align-self-center" data-aos="fade-left">
+        <div class="col-lg-6 mr-auto align-self-center" data-aos="fade-left" data-aos-offset="100" data-aos-delay="30"
+          data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+          data-aos-anchor-placement="top-center">
           <div class="feature-content">
             <!-- Feature Title -->
             <h2>Stay Informed, Stay Inspired: Your Daily Dose of Knowledge and Creativity</h2>
             <!-- Feature Description -->
-            <p class="desc">At our blog, we're passionate about sharing captivating content that sparks curiosity and ignites imagination. Dive into a world of diverse perspectives, thought-provoking discussions, and enriching narratives. Whether you're seeking informative articles, engaging stories, or inspiring insights, our platform offers something for everyone. Join us on a journey of discovery as we explore the endless possibilities of the human experience. Welcome to a space where ideas flourish and knowledge thrives.</p>
+            <p class="desc">At our blog, we're passionate about sharing captivating content that sparks curiosity and
+              ignites imagination. Dive into a world of diverse perspectives, thought-provoking discussions, and
+              enriching narratives. Whether you're seeking informative articles, engaging stories, or inspiring
+              insights, our platform offers something for everyone. Join us on a journey of discovery as we explore the
+              endless possibilities of the human experience. Welcome to a space where ideas flourish and knowledge
+              thrives.</p>
           </div>
         </div>
       </div>
@@ -111,28 +88,31 @@
   </section>
   <!--====  End of Feature Grid  ====-->
 
-  <!--==============================
-=            Services            =
-===============================-->
+  <!--Services-->
   <section class="service section bg-gray">
     <div class="container-fluid p-0">
       <div class="row">
-        <div class="col-lg-12" data-aos="fade-bottom">
+        <div class="col-lg-12" data-aos="fade-up" data-aos-offset="100" data-aos-delay="30" data-aos-duration="600"
+          data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+          data-aos-anchor-placement="top-center">
           <div class="section-title">
             <h2> Unleash Your Potential with Us</h2>
-            <!-- <p> makes
-						it easy to stay on top of your Life Style. No late tasks. No gimmicks.</p> -->
+            <p> makes it easy to stay on top of your Life Style. No late tasks. No gimmicks.</p>
           </div>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-6 align-self-center" data-aos="zoom-in">
+        <div class="col-lg-6 align-self-center" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="30"
+          data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+          data-aos-anchor-placement="top-center">
           <!-- Feature Image -->
           <div class="service-thumb left">
             <img class="img-fluid" src="/images/feature/blog_2.jpg" alt="iphone-ipad">
           </div>
         </div>
-        <div class="col-lg-5 mr-auto align-self-center" data-aos="zoom-in">
+        <div class="col-lg-5 mr-auto align-self-center" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="30"
+          data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+          data-aos-anchor-placement="top-center">
           <div class="service-box">
             <div class="row align-items-center">
               <div class="col-md-6 col-xs-12">
@@ -199,11 +179,13 @@
   <!--=================================
 =            Contact           =
 ==================================-->
-  <section class="contact-form section" data-aos="fade-bottom">
+  <section class="contact-form section" data-aos="fade-up" data-aos-offset="30" data-aos-delay="30"
+    data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+    data-aos-anchor-placement="top-center">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="mb-5 text-center">Drop us a mail</h2>
+          <h2 class="mb-4 text-center">Drop us a mail</h2>
         </div>
         <div class="col-12">
           <form action="">
@@ -276,16 +258,11 @@
     </div>
     <!-- Copyright -->
   </footer>
-
-  <!-- End of .container -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    // Use GSAP to create an animation
-    gsap.to("#animatedElement", {
-      duration: 1,    // Animation duration in seconds
-      scale: 1.5,     // Scale the element to 1.5 times its size
-        // Easing function (optional)
-    });
+    AOS.init();
   </script>
+  <!-- End of .container -->
   <script src="/js/script.js"></script>
 </body>
 
