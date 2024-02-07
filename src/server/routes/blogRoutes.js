@@ -66,6 +66,7 @@ router.post("/submit",async(req,res)=>{
     const data=new User(req.body)
     const saved=await data.save();
     // console.log(saved);
+    res.redirect("/");
 }
 catch(error){
     console.log(error);

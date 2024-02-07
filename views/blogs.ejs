@@ -16,38 +16,10 @@
     document.addEventListener("DOMContentLoaded", () => {
       const elements = document.querySelectorAll('.fade-right, .fade-bottom, .fade-left, .zoom-in');
 
-<<<<<<< HEAD
-    <body>
-        <nav class="header navbar navbar-expand-lg bg-body-tertiary">
-            <div style="display: flex; justify-content: space-between;"
-                class="container">
-                <a class="logo navbar-brand" href="index.html">QuillQuest</a>
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse menu navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="/">Home</a></li>
-                        <li class="nav-item"><a href="/blog/tech">Tech</a></li>
-                        <li class=" nav-item"><a
-                                href="/blog/chronicles">Chronicles</a></li>
-                        <li class=" nav-item"><a
-                                href="/blog/entertain">Entertain</a></li>
-                        <li class=" nav-item"><a
-                                href="/blog/headlines">Headlines</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-=======
       function checkVisibility() {
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           const windowHeight = window.innerHeight || document.documentElement.clientHeight;
->>>>>>> 6d2b441a5f1306e75b1ff36a1f30b72a28a18df0
 
           if (rect.top <= windowHeight / 1.5) {
             element.classList.add('active');
@@ -94,158 +66,30 @@
       <div class="row blog-post-area-style">
         <div class="col-lg-6 col-md-12" style="display: flex;
                     justify-content: center;">
-<<<<<<< HEAD
                         <img src="img/post-image1.jpg" alt>
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                        <!-- <h3><a href="/blog/single"><%= posts.title %></a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam.eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam.</p>
-                        <h4><span class="date">25 February 2017</span><span
-                                class="author">Posted By: <span
-                                    class="author-name">Kabbo
-                                    Liate</span></span>
-                        </h4> -->
-
-                        <ul>
-                            <% posts.forEach(post => { %>
-                                <li>
-                                    <h2><%= post.Title %></h2>
-                                    <p><%=post.Posted_by %></p>
-                                    <p><%= post.Content %></p>
-                                    <p><%= post.date %></p>
-                                </li>
-                            <% }); %>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
+                   
+                       
+                      
+                    <div class="container mt-3 ">
+                        <div class="row row-cols-3">
+                        <% posts.forEach(post => { %>
                         <div class="single-post">
                             <img src="img/post-image2.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
+                            <h3><a href="/blog/single"><%= post.Title %> </a></h3>
+                            <h4><span>Posted By: <span class="author-name"><%=post.Posted_by %></span></span></h4>
+                            <p><%= post.Content %></p>
+                            <h4><span><%= post.date %></span></h4>
                         </div>
+                        <% }) %>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image3.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image4.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image5.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image6.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image7.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image8.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-post">
-                            <img src="img/post-image9.jpg" alt>
-                            <h3><a href="/blog/single">Post Title Goes
-                                    Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo
-                                        Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed dotempor incididunt ut.
-                                labore et dolore magna aliqua. Ut enim ad minim
-                                veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
+                   
+                    
+                  
+                 
+                    
+                    
                 </div>
             </div>
             <div class="pegination">
@@ -255,158 +99,5 @@
             </div>
         </section>
     </body>
-=======
-          <img src="img/post-image1.jpg" alt>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <h3><a href="/blog/single">Post Title Goes Here.</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam.eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam.</p>
-          <h4><span class="date">25 February 2017</span><span class="author">Posted By: <span class="author-name">Kabbo
-                Liate</span></span>
-          </h4>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image2.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image3.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image4.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image5.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image6.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image7.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image8.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="single-post">
-            <img src="img/post-image9.jpg" alt>
-            <h3><a href="/blog/single">Post Title Goes
-                Here.</a></h3>
-            <h4><span>Posted By: <span class="author-name">Kabbo
-                  Liate</span></span>
-            </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed dotempor incididunt ut.
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam</p>
-            <h4><span>25 February 2017</span></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pegination">
-      <div class="nav-links">
-        <a class="read-more" href="#">Read More</a>
-      </div>
-    </div>
-  </section>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
->>>>>>> 6d2b441a5f1306e75b1ff36a1f30b72a28a18df0
 
 </html>
