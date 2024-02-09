@@ -74,6 +74,23 @@ catch(error){
 })
 
 
+router.delete('/blog/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const deletedPost = await BlogPost.findByIdAndDelete(postId);
+        
+        if (!deletedPost) {
+            return res.status(404).send('Blog post not found');
+        }
+        
+        res.status(200).send('Blog post deleted successfully');
+    } catch (error) {
+        console.error('Error deleting blog post:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
 
 
 

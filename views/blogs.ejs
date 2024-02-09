@@ -76,7 +76,17 @@
                         <% posts.forEach(post => { %>
                         <div class="single-post">
                             <img src="img/post-image2.jpg" alt>
-                            <h3><a href="/blog/single"><%= post.Title %> </a></h3>
+                            <div class="title">
+                            <h3><a href="/blog/single"><%= post.Title %> </a> </h3>  
+                            <div class="dropdown">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;background-color: white; border: white;"></button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button"><a href="/blog/:id">Delete</a></button></li>
+                                <li><button class="dropdown-item" type="button"><a href="/blog/add_blog">Edit</a></button></li>
+                            
+                              </ul>
+                            </div>
+                            </div>
                             <h4><span>Posted By: <span class="author-name"><%=post.Posted_by %></span></span></h4>
                             <p><%= post.Content %></p>
                             <h4><span><%= post.date %></span></h4>

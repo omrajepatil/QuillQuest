@@ -37,6 +37,15 @@ body {
 
 /* <<<<<<<<< Temporary merge branch 1 */
 /* ========= */
+
+
+.title{
+  display: flex;
+    justify-content: space-between;
+}
+.dropdown{
+  margin-top: 25px;
+}
 .navbar img{
   height: 50px ;
   width: 50px;
