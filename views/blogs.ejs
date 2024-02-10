@@ -81,9 +81,11 @@
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;background-color: white; border: white;"></button>
                               <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button"><a href="/blog/:id">Delete</a></button></li>
-                                <li><button class="dropdown-item" type="button"><a href="/blog/add_blog">Edit</a></button></li>
-                            
+                                <li>
+                                    <button class="dropdown-item" type="button" onclick="deletePost('<%= post._id %>')">Delete</button>
+                                </li>
+                                <li><button class="dropdown-item" type="button"><a href="/blog/edit/<%= post._id %>">Edit</a></button></li>
+                            </ul>
                               </ul>
                             </div>
                             </div>
@@ -108,6 +110,33 @@
                 </div>
             </div>
         </section>
+
+
+
+        <script>
+          function deletePost(postId) {
+              const confirmation = confirm('Are you sure you want to delete this post?');
+              if (confirmation) {
+                  fetch(`/blog/${postId}`, {
+                      method: 'DELETE'
+                  })
+                  .then(response => {
+                      if (!response.ok) {
+                          throw new Error('Failed to delete post');
+                      }
+                      return response.json();
+                  })
+                  .then(data => {
+                      // Handle successful deletion
+                      window.location.href = window.location.href; // Redirect to homepage
+                  })
+                  .catch(error => {
+                      console.error(error);
+                      // Handle error
+                  });
+              }
+          }
+      </script>
     </body>
 
 </html>
