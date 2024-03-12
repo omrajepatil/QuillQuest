@@ -47,10 +47,10 @@ body {
   margin-top: 25px;
 }
 .navbar img{
-  height: 50px ;
-  width: 50px;
-  margin-top: -15px;
-  margin-right: 25px;
+  height: 30px ;
+  width: 30px;
+  margin-top: -40px;
+  margin-right: 10px;
 }
 
 
@@ -445,12 +445,13 @@ button:focus,
  nav.header .logo {
     color: #061e37;
     font-family: "Raleway", sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     padding: 22px 0;
     text-transform: uppercase;
     display: block;
+    margin-top: -12px;
 }
  nav.header .menu ul li a {
     color: rgb(6, 30, 55);

@@ -77,21 +77,25 @@
                         <div class="single-post">
                             <img src="img/post-image2.jpg" alt>
                             <div class="title">
-                            <h3><a href="/blog/single"><%= post.Title %> </a> </h3>  
+                            <h3><a href="/blog/<%= post._id %>"><%= post.title %> </a> </h3>  
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;background-color: white; border: white;"></button>
                               <ul class="dropdown-menu">
                                 <li>
                                     <button class="dropdown-item" type="button" onclick="deletePost('<%= post._id %>')">Delete</button>
                                 </li>
-                                <li><button class="dropdown-item" type="button"><a href="/blog/edit/<%= post._id %>">Edit</a></button></li>
+                                <li><button class="dropdown-item" type="button"><a href="/edit/<%= post._id %>">Edit</a> </button></li>
                             </ul>
                               </ul>
                             </div>
                             </div>
                             <h4><span>Posted By: <span class="author-name"><%=post.Posted_by %></span></span></h4>
-                            <p><%= post.Content %></p>
-                            <h4><span><%= post.date %></span></h4>
+                            <p><%= post.Content.slice(0,50) %></p>
+                            <hr>
+                            <h6>Date :<span><%= post.date.toLocaleDateString() %></span></h6>
+                           
+                            
+
                         </div>
                         <% }) %>
                     </div>
@@ -136,6 +140,20 @@
                   });
               }
           }
+
+          
+function editPost(postId) {
+            
+      window.location.href = `/edit/${postId}`;
+      
+
+}
+
+
+    
+
+
+      
       </script>
     </body>
 

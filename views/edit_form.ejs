@@ -50,11 +50,15 @@
 		</div>
 	</nav>
 
+    
+    <form id="update">
+        
+      <input type="text" id="postId" name="postId" value="<%= postsId %>" ><br>
 
-    <form action="/blog/edit/:id" method="post">
+
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
-          <input type="text" name="Title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="text" name="Title" class="form-control" id="title" aria-describedby="emailHelp">
           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
         </div>
   
@@ -63,7 +67,7 @@
 <div class="input-group mb-3">
     <!-- <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Choose..."> -->
     <button class="btn btn-outline-secondary" type="button">Type</button>
-    <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="type">
+    <select class="form-select" id="type" aria-label="Example select with button addon" name="type">
         <option selected>Choose...</option>
         <option value="1">Tech</option>
         <option value="2">Chronicles</option>
@@ -76,15 +80,15 @@
 		 
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Posted By</label>
-          <input type="text" name="Posted_by" class="form-control" id="exampleInputPassword1">
+          <input type="text" name="Posted_by" class="form-control" id="Posted_by">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Content</label>
-            <input type="text" name="Content" class="form-control" id="exampleInputPassword1">
+            <input type="text" name="Content" class="form-control" id="content">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Date</label>
-            <input type="date" name="date" class="form-control" id="exampleInputPassword1">
+            <input type="date" name="date" class="form-control" id="date">
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -92,6 +96,63 @@
 
 
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+<script>
+	document.getElementById('update').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const postId = document.getElementById('postId').value;
+            const updatedTitle = document.getElementById('title').value;
+            const updatedPosted_by = document.getElementById('Posted_by').value;
+            const updatedContent = document.getElementById('content').value;
+            
+            edit(postId, updatedTitle,updatedPosted_by,updatedContent);
+           
+        });
+
+
+	function edit(postId, updatedTitle, updatedPosted_by, updatedContent){
+			const confirmation = confirm("do you want to update");
+            
+            if (confirmation) {
+
+                const updatedData = {}
+
+                if(updatedTitle){
+                    updatedData.title = updatedTitle;
+                }
+                if (updatedPosted_by) {
+                    updatedData.Posted_by = updatedPosted_by;
+                }
+                if (updatedContent) {
+                updatedData.Content = updatedContent;
+                }
+                fetch(`/blog/${postId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedData )
+                })
+          
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to update post');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle successful update
+                    console.log('Post updated successfully:', data);
+                    // You can perform any actions after successful update
+                })
+                .catch(error => {
+                    console.error(error);
+                    // Handle error
+                });
+		}
+}
+</script>
+	</body>
 </html>

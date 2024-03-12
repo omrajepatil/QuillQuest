@@ -1,11 +1,13 @@
 const { default: mongoose } = require("mongoose")
 
 const userSchema = mongoose.Schema({
-    Title:String,
+    title:String,
     type:String,
     Posted_by:String,
     Content:String,
-    date:Date
+    date:Date,
+    imageUrl: String,
+    comment:String
 });
 
 const User=mongoose.model("User",userSchema);
