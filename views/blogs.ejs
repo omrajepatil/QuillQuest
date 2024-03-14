@@ -71,7 +71,7 @@
                    
                        
                       
-                    <div class="container mt-3 ">
+                    <!-- <div class="container mt-3 ">
                         <div class="row row-cols-3">
                         <% posts.forEach(post => { %>
                         <div class="single-post">
@@ -93,26 +93,37 @@
                             <p><%= post.Content.slice(0,50) %></p>
                             <hr>
                             <h6>Date :<span><%= post.date.toLocaleDateString() %></span></h6>
-                           
-                            
-
-                        </div>
+                           </div>
                         <% }) %>
                     </div>
+                    </div>   -->
+
+
+                    
+                    <div class="container mt-3 ">
+                    <div class="row row-cols-3">
+                    <% posts.forEach(post => { %>
+                    <div class="card" style="width: 18rem;">
+                     
+                      <img src="<%= post.imageUrl %>" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= post.title %></h5>
+                        <p class="card-text"><%= post.Content.slice(0,50) %>....</p>
+                        <a href="/blog/<%= post._id %>" class="btn btn-primary">Read More</a>
+                      </div>
                     </div>
+
+                    <% }) %> 
                    
-                    
-                  
-                 
-                    
-                    
-                </div>
+              </div>
             </div>
             <div class="pegination">
                 <div class="nav-links">
                     <a class="read-more" href="#">Read More</a>
                 </div>
             </div>
+          </div>
+          </div>
         </section>
 
 

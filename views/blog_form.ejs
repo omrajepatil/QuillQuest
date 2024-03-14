@@ -8,51 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="header navbar navbar-expand-lg bg-body-tertiary">
-		<div style="display: flex; justify-content: center; align-items: center;"
-			class="container">
-			<a class="logo navbar-brand" href="/">QuillQuest</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse menu navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a href="/">Home</a></li>
-					<li class="nav-item"><a href="/blog/tech">Tech</a></li>
-					<li class=" nav-item"><a
-							href="/blog/chronicles">Chronicles</a></li>
-					<li class=" nav-item"><a
-							href="/blog/entertain">Entertain</a></li>
-					<li class=" nav-item"><a
-							href="/blog/headlines">Headlines</a></li>
 
-				</ul>
-			</div>
-		</div>
-		<!-- <div class="navbar">
-			<a href="#" class="navbar-brand"><img src="/images/logo.png" alt="Logo"></a>
-			
-			</div> -->
 
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle navbar" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				  <img src="/images/logo.png" alt="">
-				</a>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="/blog/add_blog">Add Blog</a></li>
-				  <li><a class="dropdown-item" href="/blog/logout">Logout</a></li>
-				  
-				</ul>
-			  </li>
-		</div>
-	</nav>
+	<%- include('./partials/nav') %>
 
 
 
-    <form action="/submit" method="post" enctype="multipart/form-data">
+
+    <form action="/submit" method="post" enctype="multipart/form-data" class="form">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
           <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -60,17 +23,19 @@
         </div>
   
 
-		<label for="exampleInputEmail1" class="form-label">Type</label>
+		<label for="exampleInputEmail1" class="form-label" class="type_label">Type</label>
 <div class="input-group mb-3">
-    <!-- <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Choose..."> -->
-    <button class="btn btn-outline-secondary" type="button">Type</button>
-    <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="type">
-        <option selected>Choose...</option>
+   <div class="type">
+    <!-- <button class="btn btn-outline-secondary " id="asd"  type="button">Type</button> -->
+    <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon" name="type"  >
+        <option selected >Choose...</option>
         <option value="1">Tech</option>
         <option value="2">Chronicles</option>
         <option value="3">Entertain</option>
         <option value="4">Headlines</option>
+	
     </select>
+</div>
 </div>
 
 		  
